@@ -25,6 +25,7 @@
 		4331CF952EE8926E001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF942EE8926B001CFCB7 /* .gitkeep */; };
 		4331CF972EE89274001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF962EE89272001CFCB7 /* .gitkeep */; };
 		4331CF992EE8927A001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF982EE89278001CFCB7 /* .gitkeep */; };
+		4331CF9C2EE899DC001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF9B2EE899D8001CFCB7 /* .gitkeep */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		4331CF942EE8926B001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4331CF962EE89272001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4331CF982EE89278001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4331CF9B2EE899D8001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				4331CF752EE890F3001CFCB7 /* Domain */,
 				4331CF712EE890A0001CFCB7 /* Data */,
 				4331CF6E2EE89080001CFCB7 /* Application */,
+				4331CF9A2EE899BC001CFCB7 /* Resources */,
 				4331CF5E2EE89068001CFCB7 /* Assets.xcassets */,
 				4331CF5F2EE89068001CFCB7 /* Info.plist */,
 				4331CF612EE89068001CFCB7 /* LaunchScreen.storyboard */,
@@ -231,6 +234,14 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		4331CF9A2EE899BC001CFCB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4331CF9B2EE899D8001CFCB7 /* .gitkeep */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +305,7 @@
 			files = (
 				4331CF8B2EE89232001CFCB7 /* .gitkeep in Resources */,
 				4331CF6A2EE89068001CFCB7 /* Assets.xcassets in Resources */,
+				4331CF9C2EE899DC001CFCB7 /* .gitkeep in Resources */,
 				4331CF6C2EE89068001CFCB7 /* LaunchScreen.storyboard in Resources */,
 				4331CF972EE89274001CFCB7 /* .gitkeep in Resources */,
 				4331CF912EE8925C001CFCB7 /* .gitkeep in Resources */,
