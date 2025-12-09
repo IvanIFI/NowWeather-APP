@@ -1,0 +1,77 @@
+###############################
+# Xcode
+###############################
+ 
+# User-specific data
+xcuserdata/
+ 
+# Build products
+build/
+DerivedData/
+ 
+# Xcode workspace (auto-generated, except default)
+*.xcworkspace
+!default.xcworkspace
+ 
+# Xcode scheme management
+xcshareddata/WorkspaceSettings.xcsettings
+ 
+###############################
+# Swift Package Manager
+###############################
+ 
+# SPM directories
+.swiftpm/
+.build/
+ 
+# SPM artifacts
+.artifacts/
+ 
+###############################
+# CocoaPods
+###############################
+ 
+# Do not include Pods in version control
+Pods/
+Podfile.lock
+ 
+###############################
+# Carthage
+###############################
+ 
+# Carthage build artifacts
+Carthage/Build/
+ 
+###############################
+# Fastlane
+###############################
+ 
+# Fastlane reports and artifacts
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+ 
+###############################
+# Logs & temporary files
+###############################
+ 
+*.log
+*.swp
+*.swo
+*~
+ 
+###############################
+# Playgrounds
+###############################
+ 
+# Playground generated files
+timeline.xctimeline
+playground.xcworkspace
+ 
+###############################
+# Archives & app bundles
+###############################
+ 
+*.xcarchive
+*.ipa
