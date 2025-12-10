@@ -11,7 +11,7 @@ class WeatherLocationVC: UIViewController {
     
     private lazy var weatherLocTableView = configMainTableView()
     private lazy var dataModelsOfCells: [any DrawerProtocol] = getUIModels()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,11 +22,11 @@ class WeatherLocationVC: UIViewController {
 
 //MARK: - UI Configuration & Setup
 private extension WeatherLocationVC {
-
+    
     func setupUI() {
         view.backgroundColor = .white
         view.addSubview(weatherLocTableView)
-      
+        
         registerCells()
         configConstrains()
     }
@@ -42,7 +42,12 @@ private extension WeatherLocationVC {
     
     func getUIModels() ->[any DrawerProtocol] {
         return[
-            SearchEngineModel(placeholder: Constants.placeHolderSearchEngine)
+            SearchEngineModel(
+                placeholder: Constants.placeHolderSearchEngine),
+            MainWeatherCellModel(
+                ImageWeatherModel(image: "sun.max"),
+                DateLabelModel(date: "10/12/2025"),
+                TemperatureModel(temperature: "10º"))
         ]
     }
     
@@ -59,8 +64,9 @@ private extension WeatherLocationVC {
     
     func registerCells() {
         weatherLocTableView.register(UINib(nibName: "SearchEngineCell", bundle: nil), forCellReuseIdentifier: SearchEngineCell.reuseId)
+        weatherLocTableView.register(UINib(nibName: "MainWeatherCell", bundle: nil), forCellReuseIdentifier: MainWeatherCell.reuseId)
     }
-
+    
 }
 
 // MARK: - TableView
@@ -86,23 +92,18 @@ extension WeatherLocationVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let rowHeight = tableView.rowHeight
-        let cell = allDataSourceOfCells[indexPath.row]
+        let cell = dataModelsOfCells[indexPath.row]
         
         switch cell {
-        case is QuestionHouseOrFlatModel:
+        case is SearchEngineModel:
+            return 50
+        case is MainWeatherCellModel:
             return 150
-        case is ButtonsHouseOrFlatModel:
-            return 80
-        case is WoodBuildedQuestionModel:
-            return 150
-        case is ButtonsYesOrNoModel:
-            return 100
-        case is InfoLabelModel:
-            return 40
         default:
             return rowHeight
-        }*/
-    
+        }
+        
+    }
 }
