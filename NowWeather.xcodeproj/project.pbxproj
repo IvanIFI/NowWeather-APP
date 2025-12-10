@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4331CF672EE89068001CFCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331CF5D2EE89068001CFCB7 /* AppDelegate.swift */; };
 		4331CF682EE89068001CFCB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331CF642EE89068001CFCB7 /* SceneDelegate.swift */; };
-		4331CF692EE89068001CFCB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331CF652EE89068001CFCB7 /* ViewController.swift */; };
 		4331CF6A2EE89068001CFCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF5E2EE89068001CFCB7 /* Assets.xcassets */; };
 		4331CF6C2EE89068001CFCB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF612EE89068001CFCB7 /* LaunchScreen.storyboard */; };
 		4331CF6D2EE89068001CFCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF632EE89068001CFCB7 /* Main.storyboard */; };
@@ -18,14 +17,14 @@
 		4331CF812EE89164001CFCB7 /* WeatherLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331CF802EE89152001CFCB7 /* WeatherLocationViewModel.swift */; };
 		4331CF832EE8917A001CFCB7 /* WeatherLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331CF822EE8917A001CFCB7 /* WeatherLocationVC.swift */; };
 		4331CF872EE891CC001CFCB7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331CF862EE8919E001CFCB7 /* MainCoordinator.swift */; };
-		4331CF892EE89227001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF882EE8921D001CFCB7 /* .gitkeep */; };
-		4331CF8B2EE89232001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF8A2EE89232001CFCB7 /* .gitkeep */; };
-		4331CF912EE8925C001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF902EE89259001CFCB7 /* .gitkeep */; };
-		4331CF932EE89266001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF922EE89263001CFCB7 /* .gitkeep */; };
-		4331CF952EE8926E001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF942EE8926B001CFCB7 /* .gitkeep */; };
-		4331CF972EE89274001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF962EE89272001CFCB7 /* .gitkeep */; };
-		4331CF992EE8927A001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF982EE89278001CFCB7 /* .gitkeep */; };
-		4331CF9C2EE899DC001CFCB7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4331CF9B2EE899D8001CFCB7 /* .gitkeep */; };
+		434BC0312EE9640B008E8D2D /* WeatherImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BC0302EE9640B008E8D2D /* WeatherImage.swift */; };
+		434BC0342EE9642B008E8D2D /* WeatherImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434BC0332EE9642B008E8D2D /* WeatherImage.xib */; };
+		434BC0372EE96F1C008E8D2D /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BC0362EE96F1C008E8D2D /* SearchEngine.swift */; };
+		434BC0392EE96F2B008E8D2D /* SearchEngine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434BC0382EE96F2B008E8D2D /* SearchEngine.xib */; };
+		434BC0402EE974EC008E8D2D /* DrawerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BC03F2EE974DF008E8D2D /* DrawerProtocol.swift */; };
+		434BC0432EE9764C008E8D2D /* SearchEngineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434BC0422EE9764C008E8D2D /* SearchEngineCell.xib */; };
+		434BC0442EE9764C008E8D2D /* SearchEngineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BC0412EE9764C008E8D2D /* SearchEngineCell.swift */; };
+		434BC0492EE986EC008E8D2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BC0482EE986CF008E8D2D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,20 +35,19 @@
 		4331CF602EE89068001CFCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4331CF622EE89068001CFCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4331CF642EE89068001CFCB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4331CF652EE89068001CFCB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4331CF6F2EE8908E001CFCB7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4331CF7E2EE89145001CFCB7 /* WeatherLocationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocationProtocol.swift; sourceTree = "<group>"; };
 		4331CF802EE89152001CFCB7 /* WeatherLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocationViewModel.swift; sourceTree = "<group>"; };
 		4331CF822EE8917A001CFCB7 /* WeatherLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocationVC.swift; sourceTree = "<group>"; };
 		4331CF862EE8919E001CFCB7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		4331CF882EE8921D001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		4331CF8A2EE89232001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		4331CF902EE89259001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		4331CF922EE89263001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		4331CF942EE8926B001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		4331CF962EE89272001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		4331CF982EE89278001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		4331CF9B2EE899D8001CFCB7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		434BC0302EE9640B008E8D2D /* WeatherImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherImage.swift; sourceTree = "<group>"; };
+		434BC0332EE9642B008E8D2D /* WeatherImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherImage.xib; sourceTree = "<group>"; };
+		434BC0362EE96F1C008E8D2D /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
+		434BC0382EE96F2B008E8D2D /* SearchEngine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchEngine.xib; sourceTree = "<group>"; };
+		434BC03F2EE974DF008E8D2D /* DrawerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerProtocol.swift; sourceTree = "<group>"; };
+		434BC0412EE9764C008E8D2D /* SearchEngineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngineCell.swift; sourceTree = "<group>"; };
+		434BC0422EE9764C008E8D2D /* SearchEngineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchEngineCell.xib; sourceTree = "<group>"; };
+		434BC0482EE986CF008E8D2D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +89,6 @@
 				4331CF5F2EE89068001CFCB7 /* Info.plist */,
 				4331CF612EE89068001CFCB7 /* LaunchScreen.storyboard */,
 				4331CF632EE89068001CFCB7 /* Main.storyboard */,
-				4331CF652EE89068001CFCB7 /* ViewController.swift */,
 			);
 			path = NowWeather;
 			sourceTree = "<group>";
@@ -118,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				4331CF732EE890AE001CFCB7 /* Mappers */,
-				4331CF742EE890B3001CFCB7 /* DTO */,
+				4331CF742EE890B3001CFCB7 /* DTOs */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -126,17 +123,15 @@
 		4331CF732EE890AE001CFCB7 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
-				4331CF882EE8921D001CFCB7 /* .gitkeep */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
 		};
-		4331CF742EE890B3001CFCB7 /* DTO */ = {
+		4331CF742EE890B3001CFCB7 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				4331CF8A2EE89232001CFCB7 /* .gitkeep */,
 			);
-			path = DTO;
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		4331CF752EE890F3001CFCB7 /* Domain */ = {
@@ -150,7 +145,6 @@
 		4331CF762EE89100001CFCB7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4331CF902EE89259001CFCB7 /* .gitkeep */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,7 +163,7 @@
 		4331CF782EE8910F001CFCB7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				4331CF982EE89278001CFCB7 /* .gitkeep */,
+				434BC03F2EE974DF008E8D2D /* DrawerProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -186,7 +180,8 @@
 		4331CF7A2EE8911A001CFCB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4331CF962EE89272001CFCB7 /* .gitkeep */,
+				434BC0352EE96EE3008E8D2D /* SearchEngineView */,
+				434BC0322EE9640F008E8D2D /* WeatherImageView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,7 +189,7 @@
 		4331CF7B2EE8911F001CFCB7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4331CF942EE8926B001CFCB7 /* .gitkeep */,
+				434BC03A2EE9746D008E8D2D /* SearchEngineCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -221,7 +216,6 @@
 		4331CF842EE8917F001CFCB7 /* WeatherSearched */ = {
 			isa = PBXGroup;
 			children = (
-				4331CF922EE89263001CFCB7 /* .gitkeep */,
 			);
 			path = WeatherSearched;
 			sourceTree = "<group>";
@@ -237,9 +231,36 @@
 		4331CF9A2EE899BC001CFCB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4331CF9B2EE899D8001CFCB7 /* .gitkeep */,
+				434BC0482EE986CF008E8D2D /* Constants.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		434BC0322EE9640F008E8D2D /* WeatherImageView */ = {
+			isa = PBXGroup;
+			children = (
+				434BC0302EE9640B008E8D2D /* WeatherImage.swift */,
+				434BC0332EE9642B008E8D2D /* WeatherImage.xib */,
+			);
+			path = WeatherImageView;
+			sourceTree = "<group>";
+		};
+		434BC0352EE96EE3008E8D2D /* SearchEngineView */ = {
+			isa = PBXGroup;
+			children = (
+				434BC0362EE96F1C008E8D2D /* SearchEngine.swift */,
+				434BC0382EE96F2B008E8D2D /* SearchEngine.xib */,
+			);
+			path = SearchEngineView;
+			sourceTree = "<group>";
+		};
+		434BC03A2EE9746D008E8D2D /* SearchEngineCell */ = {
+			isa = PBXGroup;
+			children = (
+				434BC0412EE9764C008E8D2D /* SearchEngineCell.swift */,
+				434BC0422EE9764C008E8D2D /* SearchEngineCell.xib */,
+			);
+			path = SearchEngineCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,17 +324,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4331CF8B2EE89232001CFCB7 /* .gitkeep in Resources */,
+				434BC0342EE9642B008E8D2D /* WeatherImage.xib in Resources */,
 				4331CF6A2EE89068001CFCB7 /* Assets.xcassets in Resources */,
-				4331CF9C2EE899DC001CFCB7 /* .gitkeep in Resources */,
 				4331CF6C2EE89068001CFCB7 /* LaunchScreen.storyboard in Resources */,
-				4331CF972EE89274001CFCB7 /* .gitkeep in Resources */,
-				4331CF912EE8925C001CFCB7 /* .gitkeep in Resources */,
+				434BC0392EE96F2B008E8D2D /* SearchEngine.xib in Resources */,
 				4331CF6D2EE89068001CFCB7 /* Main.storyboard in Resources */,
-				4331CF892EE89227001CFCB7 /* .gitkeep in Resources */,
-				4331CF992EE8927A001CFCB7 /* .gitkeep in Resources */,
-				4331CF932EE89266001CFCB7 /* .gitkeep in Resources */,
-				4331CF952EE8926E001CFCB7 /* .gitkeep in Resources */,
+				434BC0432EE9764C008E8D2D /* SearchEngineCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,14 +340,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				434BC0312EE9640B008E8D2D /* WeatherImage.swift in Sources */,
 				4331CF812EE89164001CFCB7 /* WeatherLocationViewModel.swift in Sources */,
 				4331CF872EE891CC001CFCB7 /* MainCoordinator.swift in Sources */,
+				434BC0402EE974EC008E8D2D /* DrawerProtocol.swift in Sources */,
 				4331CF702EE8909A001CFCB7 /* AppCoordinator.swift in Sources */,
 				4331CF672EE89068001CFCB7 /* AppDelegate.swift in Sources */,
 				4331CF7F2EE8914E001CFCB7 /* WeatherLocationProtocol.swift in Sources */,
+				434BC0372EE96F1C008E8D2D /* SearchEngine.swift in Sources */,
 				4331CF682EE89068001CFCB7 /* SceneDelegate.swift in Sources */,
 				4331CF832EE8917A001CFCB7 /* WeatherLocationVC.swift in Sources */,
-				4331CF692EE89068001CFCB7 /* ViewController.swift in Sources */,
+				434BC0442EE9764C008E8D2D /* SearchEngineCell.swift in Sources */,
+				434BC0492EE986EC008E8D2D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
