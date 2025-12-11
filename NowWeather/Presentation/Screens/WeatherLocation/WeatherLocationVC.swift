@@ -6,14 +6,26 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherLocationVC: UIViewController {
+    
+    //private var locationService: LocationServiceProtocol?
+    private var weatherLocViewModel: WeatherLocationViewModelProtocol?
     
     private lazy var weatherLocTableView = configMainTableView()
     private lazy var dataModelsOfCells: [any DrawerProtocol] = getUIModels()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //FALTA: poner en coordinators?  y cambiar nombres??
+        let service = WeatherAPIService()
+        let repository = WeatherRepository(service: service)
+        self.weatherLocViewModel = WeatherLocationViewModel(repository: repository)
+        self.weatherLocViewModel?.delegate = self
+        
+        weatherLocViewModel?.loadInitialWeather()
         
         setupUI()
     }
@@ -46,8 +58,8 @@ private extension WeatherLocationVC {
                 placeholder: Constants.placeHolderSearchEngine),
             MainWeatherCellModel(
                 ImageWeatherModel(image: "sun.max"),
-                DateLabelModel(date: "10/12/2025"),
-                TemperatureModel(temperature: "10º"))
+                DateLabelModel(date: ""),
+                TemperatureModel(temperature: ""))
         ]
     }
     
@@ -104,6 +116,36 @@ extension WeatherLocationVC: UITableViewDataSource, UITableViewDelegate {
         default:
             return rowHeight
         }
-        
+    }
+     
+}
+
+extension WeatherLocationVC: WeatherLocationViewModelDelegate {
+    
+    func didUpdateState(_ state: WeatherLocationState) {
+        switch state {
+        case .idle:
+            break
+            
+        case .loading:
+            print("Cargando datos...")
+            
+        case .success(let model):
+            print("Datos recibidos OK:", model)
+
+            dataModelsOfCells = [
+                SearchEngineModel(placeholder: Constants.placeHolderSearchEngine),
+                MainWeatherCellModel(
+                    ImageWeatherModel(image: "sun.max"),
+                    DateLabelModel(date: model.description),
+                    TemperatureModel(temperature: "\(model.temperature)º")
+                )
+            ]
+            
+            weatherLocTableView.reloadData()
+            
+        case .error(let message):
+            print("Error:", message)
+        }
     }
 }
