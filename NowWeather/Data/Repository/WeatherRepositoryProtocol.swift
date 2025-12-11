@@ -6,5 +6,6 @@
 //
 
 protocol WeatherRepositoryProtocol {
-    func getWeather(city: String) async throws -> WeatherModel
+    func getWeatherByCityName(cityName: String) async throws -> WeatherModel
+    func getWeatherByLocation(lat: Double, lon: Double) async throws -> WeatherModel
 }

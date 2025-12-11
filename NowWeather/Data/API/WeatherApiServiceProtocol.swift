@@ -6,5 +6,6 @@
 //
 
 protocol WeatherAPIServiceProtocol {
-    func getWeather(city: String) async throws -> AllDataResponseDTO
+    func getWeatherByCityName(city: String) async throws -> AllDataResponseDTO
+    func getWeatherByLocatoin(lat: Double, lon: Double) async throws -> AllDataResponseDTO
 }

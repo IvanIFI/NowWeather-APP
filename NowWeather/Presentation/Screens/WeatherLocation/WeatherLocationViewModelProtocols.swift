@@ -18,5 +18,7 @@ protocol WeatherLocationViewModelDelegate: AnyObject {
  
 protocol WeatherLocationViewModelProtocol {
     var delegate: WeatherLocationViewModelDelegate? { get set }
-    func loadInitialWeather()
+    
+    func loadWeatherByCity(cityName: String)
+    func loadWeatherByLocation(lat: Double, lon: Double)
 }

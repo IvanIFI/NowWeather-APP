@@ -15,11 +15,14 @@ final class WeatherRepository: WeatherRepositoryProtocol {
         self.service = service
     }
  
-    func getWeather(city: String) async throws -> WeatherModel {
-        let weatherDTO = try await service.getWeather(city: city)
-        let weatherModel = WeatherMapper.map(dtoResponse: weatherDTO)
-
-        return weatherModel
+    func getWeatherByCityName(cityName: String) async throws -> WeatherModel {
+        let weatherDTO = try await service.getWeatherByCityName(city: cityName)
+        return WeatherMapper.map(dtoResponse: weatherDTO)
+    }
+    
+    func getWeatherByLocation(lat: Double, lon: Double) async throws -> WeatherModel {
+        let weatherDTO = try await service.getWeatherByLocatoin(lat: lat, lon: lon)
+        return WeatherMapper.map(dtoResponse: weatherDTO)
     }
 
 }

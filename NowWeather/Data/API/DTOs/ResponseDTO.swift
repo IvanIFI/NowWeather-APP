@@ -9,10 +9,12 @@ struct AllDataResponseDTO: Decodable {
     let weather: [WeatherDescriptionDTO]
     let main: MainTempDTO
     let name: String
+    let dt: Int
 }
 
 struct WeatherDescriptionDTO: Decodable {
     let description: String
+    let icon: String
 }
 
 struct MainTempDTO: Decodable {

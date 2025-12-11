@@ -10,10 +10,12 @@ import CoreLocation
 
 class WeatherLocationVC: UIViewController {
     
-    //private var locationService: LocationServiceProtocol?
+    private var locationService: LocationServiceProtocol?
     private var weatherLocViewModel: WeatherLocationViewModelProtocol?
     
     private lazy var weatherLocTableView = configMainTableView()
+    private lazy var refreshTable = configRefreshTable()
+    private lazy var loadingSpinner = configLoadingSpinner()
     private lazy var dataModelsOfCells: [any DrawerProtocol] = getUIModels()
     
     override func viewDidLoad() {
@@ -22,10 +24,15 @@ class WeatherLocationVC: UIViewController {
         //FALTA: poner en coordinators?  y cambiar nombres??
         let service = WeatherAPIService()
         let repository = WeatherRepository(service: service)
+        
         self.weatherLocViewModel = WeatherLocationViewModel(repository: repository)
         self.weatherLocViewModel?.delegate = self
         
-        weatherLocViewModel?.loadInitialWeather()
+        self.locationService = LocationService()
+        self.locationService?.delegate = self
+        
+        self.locationService?.requestAuthorization()
+        self.locationService?.requestLocation()
         
         setupUI()
     }
@@ -38,6 +45,7 @@ private extension WeatherLocationVC {
     func setupUI() {
         view.backgroundColor = .white
         view.addSubview(weatherLocTableView)
+        view.addSubview(loadingSpinner)
         
         registerCells()
         configConstrains()
@@ -48,7 +56,10 @@ private extension WeatherLocationVC {
             weatherLocTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             weatherLocTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             weatherLocTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            weatherLocTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            weatherLocTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            
+            loadingSpinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingSpinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -57,9 +68,11 @@ private extension WeatherLocationVC {
             SearchEngineModel(
                 placeholder: Constants.placeHolderSearchEngine),
             MainWeatherCellModel(
-                ImageWeatherModel(image: "sun.max"),
+                ImageWeatherModel(image: "hourglass"),
                 DateLabelModel(date: ""),
-                TemperatureModel(temperature: ""))
+                TemperatureModel(temperature: ""),
+                LocationLabelModel(location: ""),
+                DescriptionLabelModel(description: ""))
         ]
     }
     
@@ -71,6 +84,7 @@ private extension WeatherLocationVC {
         weatherLocationTableView.dataSource = self
         weatherLocationTableView.delegate = self
         weatherLocationTableView.translatesAutoresizingMaskIntoConstraints = false
+        weatherLocationTableView.refreshControl = refreshTable
         return weatherLocationTableView
     }
     
@@ -79,6 +93,24 @@ private extension WeatherLocationVC {
         weatherLocTableView.register(UINib(nibName: "MainWeatherCell", bundle: nil), forCellReuseIdentifier: MainWeatherCell.reuseId)
     }
     
+    func configLoadingSpinner() -> UIActivityIndicatorView {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.hidesWhenStopped = true
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }
+    
+    private func configRefreshTable() -> UIRefreshControl {
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        return refresh
+    }
+    
+    //FALTA COLOCAR CORRECTAEMNTE
+    @objc private func didPullToRefresh() {
+        print("Refrescando...")
+        locationService?.requestLocation()
+    }
 }
 
 // MARK: - TableView
@@ -112,7 +144,7 @@ extension WeatherLocationVC: UITableViewDataSource, UITableViewDelegate {
         case is SearchEngineModel:
             return 50
         case is MainWeatherCellModel:
-            return 150
+            return 200
         default:
             return rowHeight
         }
@@ -120,32 +152,64 @@ extension WeatherLocationVC: UITableViewDataSource, UITableViewDelegate {
      
 }
 
+
 extension WeatherLocationVC: WeatherLocationViewModelDelegate {
-    
+ 
     func didUpdateState(_ state: WeatherLocationState) {
+ 
         switch state {
-        case .idle:
-            break
-            
         case .loading:
-            print("Cargando datos...")
+            if !refreshTable.isRefreshing {
+                loadingSpinner.startAnimating()
+            }
             
+            print("Cargando datos...")
+ 
         case .success(let model):
+            refreshTable.endRefreshing()
+            loadingSpinner.stopAnimating()
             print("Datos recibidos OK:", model)
 
+            //FALTA: Extraerlo a un metodo 
             dataModelsOfCells = [
                 SearchEngineModel(placeholder: Constants.placeHolderSearchEngine),
                 MainWeatherCellModel(
-                    ImageWeatherModel(image: "sun.max"),
-                    DateLabelModel(date: model.description),
-                    TemperatureModel(temperature: "\(model.temperature)º")
-                )
+                    ImageWeatherModel(image: model.icon),
+                    DateLabelModel(date: model.date),
+                    TemperatureModel(temperature: "\(model.temperature)"),
+                    LocationLabelModel(location: model.cityName),
+                    DescriptionLabelModel(description: model.description))
             ]
             
             weatherLocTableView.reloadData()
-            
+ 
         case .error(let message):
             print("Error:", message)
+            //FALTA: Mostrar un alert con el mensaje de error
+ 
+        case .idle:
+            break
         }
     }
 }
+
+extension WeatherLocationVC: LocationServiceDelegate {
+ 
+    func didUpdateLocation(lat: Double, lon: Double) {
+        print("Coordenadas recibidas:", lat, lon)
+        weatherLocViewModel?.loadWeatherByLocation(lat: lat, lon: lon)
+
+    }
+ 
+    func didFailLocation(error: LocationError) {
+        print("Error de ubicación:", error)
+    }
+ 
+    func didChangeAuthorization(status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
+            locationService?.requestLocation()
+        }
+    }
+
+}
+

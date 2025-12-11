@@ -14,11 +14,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="277" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="129" height="72"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WC-5l-oKW">
-                    <rect key="frame" x="0.0" y="0.0" width="277" height="36"/>
+                    <rect key="frame" x="0.0" y="0.0" width="129" height="38"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -26,13 +26,13 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0WC-5l-oKW" secondAttribute="trailing" id="Ahq-yP-Rkb"/>
-                <constraint firstItem="0WC-5l-oKW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Crv-5u-CWh"/>
-                <constraint firstItem="0WC-5l-oKW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MkW-YP-kYg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0WC-5l-oKW" secondAttribute="bottom" id="eNe-wz-AAI"/>
+                <constraint firstItem="0WC-5l-oKW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7hH-Rr-UpE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0WC-5l-oKW" secondAttribute="bottom" id="Kcl-C0-43E"/>
+                <constraint firstItem="0WC-5l-oKW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bON-wc-jEZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0WC-5l-oKW" secondAttribute="trailing" id="dNl-6N-ewh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="151.90839694656489" y="-194.36619718309859"/>
+            <point key="canvasLocation" x="133.58778625954199" y="-193.66197183098592"/>
         </view>
     </objects>
 </document>
