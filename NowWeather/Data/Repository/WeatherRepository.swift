@@ -21,7 +21,7 @@ final class WeatherRepository: WeatherRepositoryProtocol {
     }
     
     func getWeatherByLocation(lat: Double, lon: Double) async throws -> WeatherModel {
-        let weatherDTO = try await service.getWeatherByLocatoin(lat: lat, lon: lon)
+        let weatherDTO = try await service.getWeatherByLocation(lat: lat, lon: lon)
         return WeatherMapper.map(dtoResponse: weatherDTO)
     }
 

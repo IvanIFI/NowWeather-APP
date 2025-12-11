@@ -21,7 +21,7 @@ class WeatherLocationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //FALTA: poner en coordinators?  y cambiar nombres??
+        //FALTA: Crear Coordinator y extraer esta responsabilidad
         let service = WeatherAPIService()
         let repository = WeatherRepository(service: service)
         
@@ -76,7 +76,7 @@ private extension WeatherLocationVC {
         ]
     }
     
-    // MARK: - Configuration views
+    // MARK: - Configuration views (components)
     func configMainTableView() -> UITableView {
         let weatherLocationTableView = UITableView()
         weatherLocationTableView.separatorStyle = .none
@@ -100,16 +100,16 @@ private extension WeatherLocationVC {
         return indicator
     }
     
-    private func configRefreshTable() -> UIRefreshControl {
+    func configRefreshTable() -> UIRefreshControl {
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         return refresh
     }
     
-    //FALTA COLOCAR CORRECTAEMNTE
-    @objc private func didPullToRefresh() {
-        print("Refrescando...")
-        locationService?.requestLocation()
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error",message: message,preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }
 
@@ -159,24 +159,23 @@ extension WeatherLocationVC: WeatherLocationViewModelDelegate {
  
         switch state {
         case .loading:
+            print("Cargando datos...")
+            
             if !refreshTable.isRefreshing {
                 loadingSpinner.startAnimating()
             }
-            
-            print("Cargando datos...")
- 
         case .success(let model):
+            print("Datos recibidos OK:", model)
+            
             refreshTable.endRefreshing()
             loadingSpinner.stopAnimating()
-            print("Datos recibidos OK:", model)
-
-            //FALTA: Extraerlo a un metodo 
+            //FALTA: Extraer la reconstrucción a un metodo
             dataModelsOfCells = [
                 SearchEngineModel(placeholder: Constants.placeHolderSearchEngine),
                 MainWeatherCellModel(
                     ImageWeatherModel(image: model.icon),
                     DateLabelModel(date: model.date),
-                    TemperatureModel(temperature: "\(model.temperature)"),
+                    TemperatureModel(temperature: (model.temperature)),
                     LocationLabelModel(location: model.cityName),
                     DescriptionLabelModel(description: model.description))
             ]
@@ -185,10 +184,11 @@ extension WeatherLocationVC: WeatherLocationViewModelDelegate {
  
         case .error(let message):
             print("Error:", message)
-            //FALTA: Mostrar un alert con el mensaje de error
- 
-        case .idle:
-            break
+            
+            refreshTable.endRefreshing()
+            loadingSpinner.stopAnimating()
+            
+            showAlert(message: message)
         }
     }
 }
@@ -198,18 +198,21 @@ extension WeatherLocationVC: LocationServiceDelegate {
     func didUpdateLocation(lat: Double, lon: Double) {
         print("Coordenadas recibidas:", lat, lon)
         weatherLocViewModel?.loadWeatherByLocation(lat: lat, lon: lon)
-
     }
  
-    func didFailLocation(error: LocationError) {
-        print("Error de ubicación:", error)
+    func didFailLocation(error: WeatherError) {
+        weatherLocViewModel?.notifyLocationError(error: error)
     }
  
-    func didChangeAuthorization(status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse || status == .authorizedAlways {
-            locationService?.requestLocation()
-        }
-    }
+}
 
+//MARK: - User Actions
+extension WeatherLocationVC {
+    
+    @objc private func didPullToRefresh() {
+        print("Refrescando...")
+        locationService?.requestLocation()
+    }
+    
 }
 

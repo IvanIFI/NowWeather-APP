@@ -15,13 +15,3 @@ final class WeatherMapper {
         return WeatherModel(cityName: dtoResponse.name, temperature: temp,description: desc,icon: icon, date: date)
     }
 }
-
-/*
-//FALTA: NO HARDCODEAR e INTENTAR DAR UNOS VALOR POR DEFECTO EN CASO DE ERROR PONER COMO OPTIONALS EN DTOS
-extension WeatherModel {
-    init(dtoResponse: AllDataResponseDTO) {
-        self.cityName = dtoResponse.cityName ?? "Error"
-        self.description = dtoResponse.weather?.first?.description ?? "No description"
-        self.temperature = dtoResponse.main?.temp ?? ""
-    }
-} */

@@ -30,16 +30,23 @@ final class LocationService: NSObject, LocationServiceProtocol {
 extension LocationService: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        delegate?.didChangeAuthorization(status: status)
+        switch status {
+        case .denied, .restricted:
+            delegate?.didFailLocation(error: .locationPermissionDenied)
+        case .authorizedWhenInUse, .authorizedAlways:
+            manager.requestLocation()
+        default:
+            break
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let loc = locations.first else {
-            delegate?.didFailLocation(error: .unableToFindLocation)
+            delegate?.didFailLocation(error: .unknown)
             return
         }
-
-        delegate?.didUpdateLocation(lat: loc.coordinate.latitude,lon: loc.coordinate.longitude)
+     
+        delegate?.didUpdateLocation(lat: loc.coordinate.latitude, lon: loc.coordinate.longitude)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

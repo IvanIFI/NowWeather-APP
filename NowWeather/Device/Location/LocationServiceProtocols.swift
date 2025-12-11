@@ -7,16 +7,9 @@
 
 import CoreLocation
 
-enum LocationError: Error {
-    case permissionDenied
-    case unableToFindLocation
-    case unknown
-}
-
 protocol LocationServiceDelegate: AnyObject {
     func didUpdateLocation(lat: Double, lon: Double)
-    func didFailLocation(error: LocationError)
-    func didChangeAuthorization(status: CLAuthorizationStatus)
+    func didFailLocation(error: WeatherError)
 }
 
 protocol LocationServiceProtocol {

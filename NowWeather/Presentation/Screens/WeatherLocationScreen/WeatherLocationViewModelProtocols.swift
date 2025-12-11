@@ -6,7 +6,6 @@
 //
 
 enum WeatherLocationState {
-    case idle // FALTA: Saber si mantenerlo o quitarlo
     case loading
     case success(WeatherModel)
     case error(String)
@@ -21,4 +20,5 @@ protocol WeatherLocationViewModelProtocol {
     
     func loadWeatherByCity(cityName: String)
     func loadWeatherByLocation(lat: Double, lon: Double)
+    func notifyLocationError(error: WeatherError)
 }

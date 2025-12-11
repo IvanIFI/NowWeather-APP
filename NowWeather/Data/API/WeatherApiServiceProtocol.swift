@@ -7,5 +7,5 @@
 
 protocol WeatherAPIServiceProtocol {
     func getWeatherByCityName(city: String) async throws -> AllDataResponseDTO
-    func getWeatherByLocatoin(lat: Double, lon: Double) async throws -> AllDataResponseDTO
+    func getWeatherByLocation(lat: Double, lon: Double) async throws -> AllDataResponseDTO
 }
