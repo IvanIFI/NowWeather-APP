@@ -14,20 +14,25 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="271" height="72"/>
+            <rect key="frame" x="0.0" y="0.0" width="138" height="72"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7M-d4-jpt">
-                    <rect key="frame" x="30" y="11" width="211" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7M-d4-jpt">
+                    <rect key="frame" x="0.0" y="0.0" width="138" height="38"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="l7M-d4-jpt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="753-96-KRC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="l7M-d4-jpt" secondAttribute="trailing" id="F6S-z4-bqc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="l7M-d4-jpt" secondAttribute="bottom" id="Jfx-h1-k2F"/>
+                <constraint firstItem="l7M-d4-jpt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pKo-NG-CJ0"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="37.404580152671755" y="-285.91549295774649"/>
+            <point key="canvasLocation" x="-64.122137404580144" y="-285.91549295774649"/>
         </view>
     </objects>
 </document>

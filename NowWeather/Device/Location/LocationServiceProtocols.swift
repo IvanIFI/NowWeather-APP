@@ -5,8 +5,6 @@
 //  Created by Ivan Ferre Insa on 10/12/25.
 //
 
-import CoreLocation
-
 protocol LocationServiceDelegate: AnyObject {
     func didUpdateLocation(lat: Double, lon: Double)
     func didFailLocation(error: WeatherError)

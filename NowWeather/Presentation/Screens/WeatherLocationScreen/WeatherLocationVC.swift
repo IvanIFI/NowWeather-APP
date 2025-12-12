@@ -131,7 +131,7 @@ extension WeatherLocationVC: UITableViewDataSource, UITableViewDelegate {
         let drawerOfCurrentRow = currentRow.cellDrawer
         let cell = drawerOfCurrentRow.tableView(tableView, cellForRowAt: indexPath)
         drawerOfCurrentRow.drawCell(cell, withItem: currentRow)
-        cell.selectionStyle = .none
+        
         return cell
     }
     
@@ -143,14 +143,13 @@ extension WeatherLocationVC: UITableViewDataSource, UITableViewDelegate {
         case is SearchEngineModel:
             return 50
         case is MainWeatherCellModel:
-            return 200
+            return 220
         default:
             return rowHeight
         }
     }
      
 }
-
 
 extension WeatherLocationVC: WeatherLocationViewModelDelegate {
  

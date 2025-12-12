@@ -14,12 +14,12 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="149" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="175" height="115"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxd-Af-njB">
-                    <rect key="frame" x="0.0" y="29" width="149" height="87"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <rect key="frame" x="0.0" y="0.0" width="175" height="81"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="43"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -27,12 +27,12 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
                 <constraint firstItem="rxd-Af-njB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Bfy-LM-kgF"/>
-                <constraint firstItem="rxd-Af-njB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-30" id="NrE-WZ-jQz"/>
+                <constraint firstItem="rxd-Af-njB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FJl-n5-Poa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rxd-Af-njB" secondAttribute="trailing" id="k1g-VD-oXm"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rxd-Af-njB" secondAttribute="bottom" id="lAv-Hr-6GR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="2.2900763358778624" y="-177.46478873239437"/>
+            <point key="canvasLocation" x="25.190839694656489" y="-132.74647887323945"/>
         </view>
     </objects>
 </document>
