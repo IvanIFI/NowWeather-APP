@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 class WeatherLocationVC: UIViewController {
     
@@ -16,7 +15,7 @@ class WeatherLocationVC: UIViewController {
     private lazy var weatherLocTableView = configMainTableView()
     private lazy var refreshTable = configRefreshTable()
     private lazy var loadingSpinner = configLoadingSpinner()
-    private lazy var dataModelsOfCells: [any DrawerProtocol] = getUIModels()
+    private lazy var dataModelsOfCells: [any DrawerProtocol] = getDefaultModels()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +62,7 @@ private extension WeatherLocationVC {
         ])
     }
     
-    func getUIModels() ->[any DrawerProtocol] {
+    func getDefaultModels() ->[any DrawerProtocol] {
         return[
             SearchEngineModel(
                 placeholder: Constants.placeHolderSearchEngine),
