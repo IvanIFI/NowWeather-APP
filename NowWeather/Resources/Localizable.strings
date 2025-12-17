@@ -1,0 +1,8 @@
+//
+//  Localizable.strings
+//  NowWeather
+//
+//  Created by Ivan Ferre Insa on 10/12/25.
+//
+
+"LOCATION_PERMISSION_MESSAGE" = "NowWeather necesita permisos de ubicación para mostrate tu tiempo actual.";

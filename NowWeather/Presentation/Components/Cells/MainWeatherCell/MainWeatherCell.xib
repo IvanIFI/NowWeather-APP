@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="264" id="KGk-i7-Jjw" customClass="MainWeatherCell" customModule="NowWeather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="264"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="264"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8H-YH-dec" customClass="DateLabel" customModule="NowWeather" customModuleProvider="target">
+                        <rect key="frame" x="10" y="70" width="339" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="bda-zg-trs"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qs-ys-5Qc" customClass="LocationLabel" customModule="NowWeather" customModuleProvider="target">
+                        <rect key="frame" x="10" y="21" width="339" height="41"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="41" id="m6F-c2-TbX"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jn7-nN-bQR" customClass="DescriptionLabel" customModule="NowWeather" customModuleProvider="target">
+                        <rect key="frame" x="161" y="215" width="188" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="IoC-hf-QwO"/>
+                            <constraint firstAttribute="width" constant="188" id="Y5M-l5-NwP"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHu-J1-wZ3" customClass="TemperatureLabel" customModule="NowWeather" customModuleProvider="target">
+                        <rect key="frame" x="213" y="122" width="85" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="yHI-bo-0Cz"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUb-oR-IlR" customClass="WeatherImage" customModule="NowWeather" customModuleProvider="target">
+                        <rect key="frame" x="44" y="159" width="86" height="87"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="86" id="DCo-Gq-3Pz"/>
+                            <constraint firstAttribute="height" constant="87" id="sR4-NW-ri4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.59665076368710301" green="0.7803921568627451" blue="0.6015735087247488" alpha="0.54264987244897955" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="c8H-YH-dec" secondAttribute="trailing" constant="9" id="28g-GL-3C4"/>
+                    <constraint firstAttribute="trailing" secondItem="gHu-J1-wZ3" secondAttribute="trailing" constant="60" id="9op-51-Xhe"/>
+                    <constraint firstItem="c8H-YH-dec" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="GNM-ey-S2v"/>
+                    <constraint firstItem="Jn7-nN-bQR" firstAttribute="top" secondItem="gHu-J1-wZ3" secondAttribute="bottom" constant="18" id="Qnz-BY-PtP"/>
+                    <constraint firstItem="3qs-ys-5Qc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Qo4-KU-v1H"/>
+                    <constraint firstAttribute="trailing" secondItem="Jn7-nN-bQR" secondAttribute="trailing" constant="9" id="ZeE-eG-ssd"/>
+                    <constraint firstItem="3qs-ys-5Qc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="aAx-Qk-Trx"/>
+                    <constraint firstAttribute="bottom" secondItem="BUb-oR-IlR" secondAttribute="bottom" constant="18" id="i0T-qe-SHR"/>
+                    <constraint firstItem="c8H-YH-dec" firstAttribute="top" secondItem="3qs-ys-5Qc" secondAttribute="bottom" constant="8" id="j1d-HV-v7n"/>
+                    <constraint firstItem="BUb-oR-IlR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="k7j-wQ-mPt"/>
+                    <constraint firstItem="gHu-J1-wZ3" firstAttribute="top" secondItem="c8H-YH-dec" secondAttribute="bottom" constant="24" id="moX-Fb-s8Q"/>
+                    <constraint firstAttribute="bottom" secondItem="Jn7-nN-bQR" secondAttribute="bottom" constant="11" id="vgd-2w-hzR"/>
+                    <constraint firstAttribute="trailing" secondItem="3qs-ys-5Qc" secondAttribute="trailing" constant="9" id="yEx-qa-Qpb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="c8H-YH-dec" id="8qF-9Y-S1S"/>
+                <outlet property="descriptionLabel" destination="Jn7-nN-bQR" id="aRb-PY-WCY"/>
+                <outlet property="imageWeather" destination="BUb-oR-IlR" id="NpB-bw-7YK"/>
+                <outlet property="locationLabel" destination="3qs-ys-5Qc" id="lJG-eG-L3X"/>
+                <outlet property="temperatureLabel" destination="gHu-J1-wZ3" id="s3S-9E-Wc4"/>
+            </connections>
+            <point key="canvasLocation" x="158.77862595419847" y="9.1549295774647899"/>
+        </tableViewCell>
+    </objects>
+</document>
